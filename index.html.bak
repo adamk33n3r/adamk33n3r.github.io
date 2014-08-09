@@ -1,0 +1,17 @@
+<html DOCTYPE=html>
+    <head>
+        <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <link href="/css/print.css" media="print" rel="stylesheet" type="text/css" />
+        <!--[if IE]>
+            <link href="/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <![endif]-->
+
+        <title>Adam Keenan</title>
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="header"><span id="title">Adam Keenan</span></div>
+        <span class="icon-compass"></span>
+    </body>
+</html>
