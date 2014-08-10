@@ -10,7 +10,7 @@ html
   height: 100%
 body
   color: white
-  background: #f00
+  background: $splash-bg
   height: 100%
   font-size: 1em
 
@@ -30,7 +30,6 @@ a
 
 #splash-container
   position: relative
-  background: $splash-bg
 
 #splash
   //margin: auto
@@ -72,15 +71,13 @@ a
         &:hover
           background-color: $border-color
 
-#about
-  background-color: $border-color
-
-#projects
-  background-color: $splash-bg
-
 .row
   //width: 75%
   min-height: 100%
   padding: 0 25%
   p
     display: inline-block
+  &:nth-child(odd)
+    background-color: $splash-bg
+  &:nth-child(even)
+    background-color: $border-color
