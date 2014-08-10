@@ -1,5 +1,6 @@
 // Defines
 $border-color: #5af
+$splash-bg: #111
 
 
 
@@ -9,10 +10,13 @@ html
   height: 100%
 body
   color: white
-  background: #444
+  background: #f00
   height: 100%
+  font-size: 1em
 
-
+@media (max-width: 600px)
+  body
+    font-size: .25em
 a
   text-decoration: none
 
@@ -26,46 +30,57 @@ a
 
 #splash-container
   position: relative
-  width: 100%
-  height: 100%
-  background: #111
+  background: $splash-bg
 
 #splash
-  margin: auto
-  position: absolute
-  top: 0
-  bottom: 0
-  left: 0
-  right: 0
-  width: 50%
+  //margin: auto
+  position: relative
+  top: 25vh
+  //width: 50%
   height: 50%
 
 #name
-  padding: 1em 1.6em
+  padding: 1em 0.5em
   border: 3px solid $border-color
   border-radius: 10px
 
-  font-size: 300%
+  font-size: 4em
   text-align: center
 
   text-transform: uppercase
 
-#navbar
-  padding: 0.5em
-  text-align: center
-  li > a
-    color: white
-    border: 2px solid $border-color
-    border-radius: 10px
-    padding: 15px
-    transition: all .25s
-    &:hover
-      background-color: $border-color
-  *
-    display: inline-block
-    padding: 5px 15px
-    margin: 0
+  transition: background-color .25s
+  &:hover
+    cursor: pointer
+    background-color: $border-color
 
-#content
-  margin: 0 auto
-  width: 50%
+#navbar
+  padding: 2em
+  text-align: center
+  ul
+    padding-left: 0
+    li
+      display: inline-block
+      padding: 0 15px
+      a
+        color: white
+        outline: none
+        border: 2px solid $border-color
+        border-radius: 10px
+        padding: 1em 2em
+        transition: background-color .25s
+        &:hover
+          background-color: $border-color
+
+#about
+  background-color: $border-color
+
+#projects
+  background-color: $splash-bg
+
+.row
+  //width: 75%
+  min-height: 100%
+  padding: 0 25%
+  p
+    display: inline-block
