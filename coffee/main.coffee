@@ -29,10 +29,11 @@ animate_scroll_to = (toY) ->
   $("#container").animate
     scrollTop: toY
     2000
-    "easeOutBounce"
+    "easeOutExpo"
 
 scrollTo = (section, pushState) ->
   animate_scroll_to section.offsetTop
+  $("#back_to_top").fadeIn()
   if pushState
     history.pushState {section: section.id}, titleize(section.id), section.id
 
@@ -40,8 +41,8 @@ handle_anchors2 = ->
   if location.pathname.length > 1
     section = $("[id=#{location.pathname.substring(1)}]")[0]
     if section
-      scrollTo section
-      history.pushState {section: section.id}, titleize(section.id), section.id
+      scrollTo section, true
+      slide $("#back_to_top"), {right: 25}
   else
     history.replaceState({section: "splash-container"}, "splash", "")
   $("a").click ->
@@ -49,6 +50,7 @@ handle_anchors2 = ->
     $section = $("[id=#{section}]")
     if $section.length > 0
       scrollTo $section[0], true
+      slide $("#back_to_top"), {right: 25}
     return false
   # When they push back
   $(window).on "popstate", ->
@@ -56,6 +58,7 @@ handle_anchors2 = ->
       $section = $("[id=#{location.pathname.substring(1)}]")
       if $section.length > 0
         scrollTo $section[0], false
+        slide $("#back_to_top"), {right: 25}
     else
       animate_scroll_to 0
 
@@ -79,25 +82,33 @@ goToNextSection = ->
   if next_section
     animate_scroll_to next_section.offsetTop
     history.pushState {section: next_section.id}, titleize(next_section.id), next_section.id
+    slide $("#back_to_top"), {right: 25}
 
 goToPrevSection = ->
   prev_section = get_section_before(history.state.section)[0]
   if prev_section
     animate_scroll_to prev_section.offsetTop
     if prev_section.id == $(".row")[0].id
-      history.pushState {section: prev_section.id}, "", "/"
+#      history.pushState {section: prev_section.id}, "splash", "/"
+      scrollToTop()
     else
       history.pushState {section: prev_section.id}, titleize(prev_section.id), prev_section.id
+      slide $("#back_to_top"), {right: 25}
 
 check_scrolling = ->
   # Assuming we get them in the order they are on the page
   current_section = get_current_section()
   if history.state.section != current_section.id
     if current_section.id == $(".row")[0].id
-      history.pushState {section: current_section.id}, "", "/"
+      history.pushState {section: current_section.id}, "splash", "/"
+      slide $("#back_to_top"), {right: -50}
+#      scrollToTop()
     else
       history.pushState {section: current_section.id}, titleize(current_section.id), current_section.id
+      slide $("#back_to_top"), {right: 25}
 #      console.log("You made it to #{farthest.id}!")
+
+CAN_SCROLL = true
 SCROLL_DELTA_FACTOR = 1
 $ ->
   SCROLL_DELTA_FACTOR = switch $.client.os
@@ -120,9 +131,58 @@ $ ->
         check_scrolling()
       when 72
         animate_scroll_to 0
+        history.pushState {section: current_section.id}, "", "/"
   $(document.body).mousewheel (e) ->
-    $container = $("#container")
-    current_scroll = $container.scrollTop()
-    $container.scrollTop current_scroll + (SCROLL_DELTA_FACTOR * -e.deltaY)
-    check_scrolling()
-#    console.log e.deltaX, e.deltaY, e.deltaFactor, $container.scrollTop(), $container.scrollTop() + (50 / -e.deltaY)
+    if CAN_SCROLL
+      $container = $("#container")
+      current_scroll = $container.scrollTop()
+      $container.scrollTop current_scroll + (SCROLL_DELTA_FACTOR * -e.deltaY)
+      check_scrolling()
+#      console.log e.deltaX, e.deltaY, e.deltaFactor, $container.scrollTop(), $container.scrollTop() + (50 / -e.deltaY)
+
+  $("#back_to_top").click ->
+    scrollToTop()
+
+
+
+
+
+
+
+
+
+
+  $("#name").click ->
+    CAN_SCROLL = false
+    console.log "Clicked on my name!"
+    $("#navbar").css("position", "relative")
+    slide $("#navbar"), top: 1000,
+      duration: 1000
+    $(this).css("position", "relative")
+    slide this, top: -1000,
+      done: show_secrets
+      duration: 1000
+  $("#secrets").click ->
+    console.log "Going back!"
+    $(this).fadeOut()
+    $("#name, #navbar").show()
+    slide $("#name, #navbar"), top: 0,
+      done: ->
+        CAN_SCROLL = true
+      duration: 1000
+
+slide = (ele, to, options) ->
+  $(ele).animate to, options
+
+show_secrets = ->
+  $("#name, #navbar").hide()
+  $("#secrets").fadeIn()
+
+
+
+
+
+scrollToTop = ->
+  animate_scroll_to 0
+  history.pushState {section: "splash-container"}, "splash", "/"
+  slide $("#back_to_top"), {right: -100}

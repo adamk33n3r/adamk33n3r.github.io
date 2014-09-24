@@ -67,12 +67,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 9, ../sass/main.sass */
+/* line 12, ../sass/main.sass */
 html {
   height: 100%;
 }
 
-/* line 11, ../sass/main.sass */
+/* line 14, ../sass/main.sass */
 body {
   color: white;
   background: #111111;
@@ -81,41 +81,41 @@ body {
 }
 
 @media (max-width: 600px) {
-  /* line 18, ../sass/main.sass */
+  /* line 21, ../sass/main.sass */
   body {
     font-size: 0.25em;
   }
 }
-/* line 20, ../sass/main.sass */
+/* line 23, ../sass/main.sass */
 a {
   text-decoration: none;
 }
 
-/* line 23, ../sass/main.sass */
+/* line 26, ../sass/main.sass */
 #container {
   height: 100%;
   position: relative;
   overflow: hidden;
 }
 
-/* line 28, ../sass/main.sass */
+/* line 31, ../sass/main.sass */
 #title {
   text-shadow: 0px 1px 1px black;
 }
 
-/* line 31, ../sass/main.sass */
+/* line 34, ../sass/main.sass */
 #splash-container {
   position: relative;
 }
 
-/* line 34, ../sass/main.sass */
+/* line 37, ../sass/main.sass */
 #splash {
   position: relative;
   top: 25vh;
   height: 50%;
 }
 
-/* line 41, ../sass/main.sass */
+/* line 44, ../sass/main.sass */
 #name {
   padding: 1em 0.5em;
   border: 3px solid #55aaff;
@@ -124,28 +124,28 @@ a {
   text-align: center;
   text-transform: uppercase;
   transition: background-color 0.25s;
-}
-/* line 52, ../sass/main.sass */
-#name:hover {
   cursor: pointer;
+}
+/* line 56, ../sass/main.sass */
+#name:hover {
   background-color: #55aaff;
 }
 
-/* line 56, ../sass/main.sass */
+/* line 59, ../sass/main.sass */
 #navbar {
   padding: 2em;
   text-align: center;
 }
-/* line 59, ../sass/main.sass */
+/* line 62, ../sass/main.sass */
 #navbar ul {
   padding-left: 0;
 }
-/* line 61, ../sass/main.sass */
+/* line 64, ../sass/main.sass */
 #navbar ul li {
   display: inline-block;
   padding: 0 15px;
 }
-/* line 64, ../sass/main.sass */
+/* line 67, ../sass/main.sass */
 #navbar ul li a {
   color: white;
   outline: none;
@@ -154,25 +154,95 @@ a {
   padding: 1em 2em;
   transition: background-color 0.25s;
 }
-/* line 71, ../sass/main.sass */
+/* line 74, ../sass/main.sass */
 #navbar ul li a:hover {
   background-color: #55aaff;
 }
 
-/* line 74, ../sass/main.sass */
-.row {
+/* line 77, ../sass/main.sass */
+div.row {
   min-height: 100%;
   padding: 0 25%;
 }
-/* line 78, ../sass/main.sass */
-.row p {
+/* line 81, ../sass/main.sass */
+div.row p {
   display: inline-block;
 }
-/* line 80, ../sass/main.sass */
-.row:nth-child(odd) {
+/* line 83, ../sass/main.sass */
+div.row:nth-of-type(odd) {
   background-color: #111111;
 }
-/* line 82, ../sass/main.sass */
-.row:nth-child(even) {
+/* line 85, ../sass/main.sass */
+div.row:nth-of-type(even) {
+  background-color: #55aaff;
+}
+
+/* line 93, ../sass/main.sass */
+#back_to_top {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border: 5.5px solid white;
+  border-radius: 100%;
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  box-sizing: border-box;
+  z-index: 1;
+  transition: all 0.25s;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* line 112, ../sass/main.sass */
+#back_to_top:after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  width: 0;
+  height: 25px;
+  top: 11.5px;
+  left: 15.33333px;
+  border: 4.16667px solid white;
+  border-right-width: 5.16667px;
+}
+/* line 123, ../sass/main.sass */
+#back_to_top:before {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  left: 7px;
+  top: 8px;
+  box-sizing: border-box;
+  position: absolute;
+  border: 8.33333px solid white;
+  border-right: none;
+  border-bottom: none;
+  transform: rotate(45deg);
+}
+/* line 136, ../sass/main.sass */
+#back_to_top:hover {
+  background-color: #55aaff;
+}
+
+/* line 143, ../sass/main.sass */
+#secrets {
+  display: none;
+  padding: 1em 0.5em;
+  border: 3px solid #55aaff;
+  border-radius: 10px;
+  font-size: 4em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 0.25s;
+  cursor: pointer;
+}
+/* line 156, ../sass/main.sass */
+#secrets:hover {
   background-color: #55aaff;
 }

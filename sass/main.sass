@@ -1,5 +1,8 @@
 // Defines
-$border-color: #5af
+$ICE_BLUE: #00E6FF
+$PERIWINKLE: #55aaff
+
+$border-color: $PERIWINKLE
 $splash-bg: #111
 
 
@@ -49,8 +52,8 @@ a
   text-transform: uppercase
 
   transition: background-color .25s
+  cursor: pointer
   &:hover
-    cursor: pointer
     background-color: $border-color
 
 #navbar
@@ -71,13 +74,84 @@ a
         &:hover
           background-color: $border-color
 
-.row
+div.row
   //width: 75%
   min-height: 100%
   padding: 0 25%
   p
     display: inline-block
-  &:nth-child(odd)
+  &:nth-of-type(odd)
     background-color: $splash-bg
-  &:nth-child(even)
+  &:nth-of-type(even)
+    background-color: $border-color
+
+$scroll_down_icon_size: 50px
+$scroll_down_icon_border_size: 5.5px
+$scroll_down_icon_height: $scroll_down_icon_size / 2
+$scroll_down_icon_width: $scroll_down_icon_size / 6
+
+#back_to_top
+  cursor: pointer
+  width: $scroll_down_icon_size
+  height: $scroll_down_icon_size
+  border: $scroll_down_icon_border_size solid white
+  border-radius: 100%
+  position: fixed
+  right: 25px
+  bottom: 25px
+  box-sizing: border-box
+  z-index: 1
+  transition: all .25s
+
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  &:after
+    content: ""
+    display: block
+    box-sizing: border-box
+    position: relative
+    width: 0
+    height: $scroll_down_icon_height
+    top: $scroll_down_icon_size / 2 - $scroll_down_icon_height / 2 - 1
+    left: $scroll_down_icon_size / 2 - $scroll_down_icon_border_size - $scroll_down_icon_width / 2
+    border: $scroll_down_icon_width / 2 solid white
+    border-right-width: $scroll_down_icon_width / 2 + 1
+  &:before
+    content: ""
+    display: block
+    width: 25px
+    height: 25px
+    left: 7px
+    top: 8px
+    box-sizing: border-box
+    position: absolute
+    border: $scroll_down_icon_width solid white
+    border-right: none
+    border-bottom: none
+    transform: rotate(45deg)
+  &:hover
+    background-color: $border-color
+
+
+
+
+
+#secrets
+  display: none
+  padding: 1em 0.5em
+  border: 3px solid $border-color
+  border-radius: 10px
+
+  font-size: 4em
+  text-align: center
+
+  text-transform: uppercase
+
+  transition: background-color .25s
+  cursor: pointer
+  &:hover
     background-color: $border-color
