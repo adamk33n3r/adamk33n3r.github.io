@@ -122,6 +122,8 @@ $ ->
       $("#container").scrollTop(0)
       handle_anchors2()
     , 1
+  else
+      handle_anchors2()
   console.log(titleize("hello friend"))
   $(document.body).keydown (e) ->
     $container = $("#container")
