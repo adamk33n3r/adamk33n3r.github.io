@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <!--<script src="js/vendor/pace.min.js"></script>-->
+    <!--<link href="css/vendor/pace.css" rel="stylesheet"/>-->
+
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Shadows+Into+Light|Nunito|Playball|Merienda+One' rel='stylesheet' type='text/css'>
+    <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+    <link href="/css/pygments/default.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+    <link href="/css/pygments/monokai.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+    <link href="/css/pygments/solarized.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+    <link href="/css/pygments/solarized256.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+    <!--<link href="/css/print.css" media="print" rel="stylesheet" type="text/css"/>-->
+    <!--[if IE]>
+    <link href="/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+    {% for css in page.head.css %}
+    <link href="/css/{{ css }}" rel="stylesheet">
+    {% endfor %}
+    <title>adam-keenan.com - {{ page.title }}</title>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="/js/vendor/jquery-ui.min.js"></script>
+    <script src="/js/vendor/jquery.mousewheel.min.js"></script>
+    <script src="/js/vendor/jquery.client.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">-->
+    <!--<link href="//yui.yahooapis.com/pure/0.5.0/pure-min.css" rel="stylesheet">-->
+
+
+
+
+
+
+    <link rel="shortcut icon" href="/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+    <meta name="apple-mobile-web-app-title" content="Adam Keenan">
+    <link rel="icon" type="image/png" href="/favicons/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#55aaff">
+    <meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    <meta name="application-name" content="Adam Keenan">
+</head>
+<body>
+<div id="container">
+    {{ content }}
+</div>
+</body>
+</html>

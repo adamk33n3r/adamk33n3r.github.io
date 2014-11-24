@@ -1,0 +1,10 @@
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "main"
+      author: "Adam Keenan"
+kramdown:
+  input: GFM

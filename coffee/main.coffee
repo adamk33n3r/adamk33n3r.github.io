@@ -1,3 +1,7 @@
+TYPES = "default monokai solarized solarized256"
+
+
+
 titleize = (str) ->
   return str.replace /\w\S*/g, (txt) ->
     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
@@ -28,13 +32,12 @@ handle_anchors = ->
 animate_scroll_to = (toY) ->
   $("#container").animate
     scrollTop: toY
-    2000
+    1000
     "easeOutExpo"
 
 scrollTo = (section, pushState) ->
   animate_scroll_to section.offsetTop
   $("#back_to_top").fadeIn()
-  console.log "##{section.id}"
   if pushState
     history.pushState {section: section.id}, titleize(section.id), "##{section.id}"
 
@@ -42,7 +45,6 @@ handle_anchors2 = ->
   if location.hash.length > 1
     # section = $("[id=#{location.pathname.substring(1)}]")[0]
     section = $(location.hash)[0]
-    console.log section
     if section
       scrollTo section, true
       slide $("#back_to_top"), {right: 25}
@@ -151,6 +153,8 @@ $ ->
 
   $("#back_to_top").click ->
     scrollToTop()
+  
+  handleCodeStyler()
 
 
 
@@ -195,3 +199,49 @@ scrollToTop = ->
   animate_scroll_to 0
   history.pushState {section: "splash-container"}, "splash", "/"
   slide $("#back_to_top"), {right: -100}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+handleCodeStyler = ->
+  _add_wrapper($(".highlighttable, .highlight:not(td .highlight)"))
+  $select = $(".code-box-header > select")
+  $select.val(window.localStorage.getItem("style") or "default")
+  $select.change (e) ->
+    $select.val(this.value)
+    $select.parent().parent().attr("class", "code-box #{this.value}")
+    window.localStorage.setItem("style", this.value)
+  $select.change()
+  $highlights = $(".highlight:not(td .highlight)")
+  $highlights.each (idx, ele) ->
+    $linenos = $(ele).find(".lineno")
+    $linenos.first().addClass("first")
+    $linenos.last().addClass("last")
+
+
+upper = (str) ->
+  str.charAt(0).toUpperCase() + str.slice(1)
+
+
+_add_wrapper = (code_blocks) ->
+  for block in code_blocks
+    $block = $(block)
+    $box = $("<div>").addClass("code-box default")
+    lang = $block.find("code").data("lang")
+    header = "<div class=\"code-box-header\">#{upper(lang)}<select>"
+    for style in TYPES.split(' ')
+      header += "<option value=\"#{style}\">#{upper(style)}</option>"
+    header += "</select></div>"
+    $header = $(header)
+    new_content = $box.append($header).append($block.clone())
+    $block.replaceWith(new_content)

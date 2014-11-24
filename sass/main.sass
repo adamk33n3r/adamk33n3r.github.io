@@ -7,8 +7,6 @@ $splash-bg: #111
 
 
 
-
-
 html
   height: 100%
 body
@@ -80,9 +78,11 @@ a
 div.row
   //width: 75%
   min-height: 100%
-  padding: 0 25%
+  padding: 15px 25%
+  box-sizing: border-box
   p
     display: inline-block
+    font-size: 3em
   &:nth-of-type(odd)
     background-color: $splash-bg
   &:nth-of-type(even)
@@ -158,3 +158,53 @@ $scroll_down_icon_width: $scroll_down_icon_size / 6
   cursor: pointer
   &:hover
     background-color: $border-color
+
+
+$lineno-bg: #888
+
+.code-box
+  color: black
+  border: 1px solid black
+  border-radius: 10px
+  background: #cbb
+  padding: 10px
+  line-height: 18px
+  .code-box-header
+    padding: 10px
+    font-weight: bold
+    #border-bottom: 1px solid black
+    select
+      float: right
+  > .highlight
+    border: 1px solid black
+    padding: 10px
+    code
+      width: 100%
+      display: inline-block
+      .lineno
+        text-align: center
+        color: black
+        background: $lineno-bg
+        padding: 0 10px
+        margin-left: -10px
+        border-right: 1px solid black
+        -moz-user-select: none
+        -webkit-user-select: none
+        user-select: none
+        &.first
+          padding-top: 10px
+        &.last
+          padding-bottom: 10px
+  .highlighttable
+    width: 100%
+    border: 1px solid black
+    .linenos
+      text-align: center
+      background-color: $lineno-bg
+      width: 30px
+      border-right: 1px solid black
+      -moz-user-select: none
+      -webkit-user-select: none
+      user-select: none
+    .code
+      padding: 10px
