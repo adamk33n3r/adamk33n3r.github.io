@@ -40,17 +40,19 @@
   scrollTo = function(section, pushState) {
     animate_scroll_to(section.offsetTop);
     $("#back_to_top").fadeIn();
+    console.log("#" + section.id);
     if (pushState) {
       return history.pushState({
         section: section.id
-      }, titleize(section.id), section.id);
+      }, titleize(section.id), "#" + section.id);
     }
   };
 
   handle_anchors2 = function() {
     var section;
-    if (location.pathname.length > 1) {
-      section = $("[id=" + (location.pathname.substring(1)) + "]")[0];
+    if (location.hash.length > 1) {
+      section = $(location.hash)[0];
+      console.log(section);
       if (section) {
         scrollTo(section, true);
         slide($("#back_to_top"), {
@@ -65,7 +67,7 @@
     $("a").click(function() {
       var $section;
       section = this.getAttribute("href");
-      $section = $("[id=" + section + "]");
+      $section = $("[id=" + (section.substring(1)) + "]");
       if ($section.length > 0) {
         scrollTo($section[0], true);
         slide($("#back_to_top"), {
@@ -117,7 +119,7 @@
       animate_scroll_to(next_section.offsetTop);
       history.pushState({
         section: next_section.id
-      }, titleize(next_section.id), next_section.id);
+      }, titleize(next_section.id), "#" + ext_section.id);
       return slide($("#back_to_top"), {
         right: 25
       });
@@ -134,7 +136,7 @@
       } else {
         history.pushState({
           section: prev_section.id
-        }, titleize(prev_section.id), prev_section.id);
+        }, titleize(prev_section.id), "#" + prev_section.id);
         return slide($("#back_to_top"), {
           right: 25
         });
@@ -156,7 +158,7 @@
       } else {
         history.pushState({
           section: current_section.id
-        }, titleize(current_section.id), current_section.id);
+        }, titleize(current_section.id), "#" + current_section.id);
         return slide($("#back_to_top"), {
           right: 25
         });
@@ -178,7 +180,12 @@
           return 1;
       }
     })();
-    handle_anchors2();
+    if (location.hash) {
+      setTimeout(function() {
+        $("#container").scrollTop(0);
+        return handle_anchors2();
+      }, 1);
+    }
     console.log(titleize("hello friend"));
     $(document.body).keydown(function(e) {
       var $container;

@@ -34,12 +34,15 @@ animate_scroll_to = (toY) ->
 scrollTo = (section, pushState) ->
   animate_scroll_to section.offsetTop
   $("#back_to_top").fadeIn()
+  console.log "##{section.id}"
   if pushState
-    history.pushState {section: section.id}, titleize(section.id), section.id
+    history.pushState {section: section.id}, titleize(section.id), "##{section.id}"
 
 handle_anchors2 = ->
-  if location.pathname.length > 1
-    section = $("[id=#{location.pathname.substring(1)}]")[0]
+  if location.hash.length > 1
+    # section = $("[id=#{location.pathname.substring(1)}]")[0]
+    section = $(location.hash)[0]
+    console.log section
     if section
       scrollTo section, true
       slide $("#back_to_top"), {right: 25}
@@ -47,7 +50,7 @@ handle_anchors2 = ->
     history.replaceState({section: "splash-container"}, "splash", "")
   $("a").click ->
     section = this.getAttribute("href")
-    $section = $("[id=#{section}]")
+    $section = $("[id=#{section.substring(1)}]")
     if $section.length > 0
       scrollTo $section[0], true
       slide $("#back_to_top"), {right: 25}
@@ -81,7 +84,7 @@ goToNextSection = ->
   next_section = get_section_after(history.state.section)[0]
   if next_section
     animate_scroll_to next_section.offsetTop
-    history.pushState {section: next_section.id}, titleize(next_section.id), next_section.id
+    history.pushState {section: next_section.id}, titleize(next_section.id), "##{ext_section.id}"
     slide $("#back_to_top"), {right: 25}
 
 goToPrevSection = ->
@@ -92,7 +95,7 @@ goToPrevSection = ->
 #      history.pushState {section: prev_section.id}, "splash", "/"
       scrollToTop()
     else
-      history.pushState {section: prev_section.id}, titleize(prev_section.id), prev_section.id
+      history.pushState {section: prev_section.id}, titleize(prev_section.id), "##{prev_section.id}"
       slide $("#back_to_top"), {right: 25}
 
 check_scrolling = ->
@@ -104,7 +107,7 @@ check_scrolling = ->
       slide $("#back_to_top"), {right: -50}
 #      scrollToTop()
     else
-      history.pushState {section: current_section.id}, titleize(current_section.id), current_section.id
+      history.pushState {section: current_section.id}, titleize(current_section.id), "##{current_section.id}"
       slide $("#back_to_top"), {right: 25}
 #      console.log("You made it to #{farthest.id}!")
 
@@ -114,7 +117,11 @@ $ ->
   SCROLL_DELTA_FACTOR = switch $.client.os
     when "Windows", "Linux" then 50
     when "Mac" then 1
-  handle_anchors2()
+  if location.hash
+    setTimeout ->
+      $("#container").scrollTop(0)
+      handle_anchors2()
+    , 1
   console.log(titleize("hello friend"))
   $(document.body).keydown (e) ->
     $container = $("#container")
