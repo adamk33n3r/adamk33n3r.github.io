@@ -3,3 +3,72 @@
   width: 75%;
   margin: 0 auto;
 }
+
+/* line 10, ../sass/site.sass */
+.code-box {
+  color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: #cbb;
+  padding: 10px;
+  line-height: 18px;
+}
+/* line 17, ../sass/site.sass */
+.code-box .code-box-header {
+  padding: 10px;
+  font-weight: bold;
+  #border-bottom: 1px solid black;
+}
+/* line 21, ../sass/site.sass */
+.code-box .code-box-header select {
+  float: right;
+}
+/* line 23, ../sass/site.sass */
+.code-box > .highlight {
+  border: 1px solid black;
+  padding: 10px;
+}
+/* line 26, ../sass/site.sass */
+.code-box > .highlight code {
+  width: 100%;
+  display: inline-block;
+}
+/* line 29, ../sass/site.sass */
+.code-box > .highlight code .lineno {
+  text-align: center;
+  color: black;
+  background: #888;
+  padding: 0 10px;
+  margin-left: -10px;
+  border-right: 1px solid black;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+/* line 39, ../sass/site.sass */
+.code-box > .highlight code .lineno.first {
+  padding-top: 10px;
+}
+/* line 41, ../sass/site.sass */
+.code-box > .highlight code .lineno.last {
+  padding-bottom: 10px;
+}
+/* line 43, ../sass/site.sass */
+.code-box .highlighttable {
+  width: 100%;
+  border: 1px solid black;
+}
+/* line 46, ../sass/site.sass */
+.code-box .highlighttable .linenos {
+  text-align: center;
+  background-color: #888;
+  width: 30px;
+  border-right: 1px solid black;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+/* line 54, ../sass/site.sass */
+.code-box .highlighttable .code {
+  padding: 10px;
+}
