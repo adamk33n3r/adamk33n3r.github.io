@@ -179,6 +179,7 @@ div.row:nth-of-type(even) {
 /* line 151, ../sass/main.sass */
 #back_to_top {
   text-align: center;
+  font-size: 36px;
   cursor: pointer;
   width: 50px;
   height: 50px;
@@ -197,13 +198,13 @@ div.row:nth-of-type(even) {
   -ms-user-select: none;
   user-select: none;
 }
-/* line 171, ../sass/main.sass */
+/* line 172, ../sass/main.sass */
 #back_to_top:hover {
   background-color: #55aaff;
   box-shadow: 0 0 10px #ccc;
 }
 
-/* line 177, ../sass/main.sass */
+/* line 178, ../sass/main.sass */
 #secrets {
   display: none;
   padding: 1em 0.5em;
@@ -214,31 +215,31 @@ div.row:nth-of-type(even) {
   transition: background-color 0.25s;
   cursor: pointer;
 }
-/* line 190, ../sass/main.sass */
+/* line 191, ../sass/main.sass */
 #secrets:hover {
   background-color: #55aaff;
 }
 
-/* line 194, ../sass/main.sass */
+/* line 195, ../sass/main.sass */
 .icon-row {
   font-size: 2em;
   text-align: center;
   margin-top: 50%;
 }
-/* line 198, ../sass/main.sass */
+/* line 199, ../sass/main.sass */
 .icon-row a.icon {
   display: inline-block;
   text-decoration: none;
 }
-/* line 201, ../sass/main.sass */
+/* line 202, ../sass/main.sass */
 .icon-row a.icon span {
   display: block;
 }
-/* line 203, ../sass/main.sass */
+/* line 204, ../sass/main.sass */
 .icon-row a.icon:hover {
   cursor: pointer;
 }
-/* line 205, ../sass/main.sass */
+/* line 206, ../sass/main.sass */
 .icon-row a.icon:not(:last-child) {
   margin-right: 15px;
 }
