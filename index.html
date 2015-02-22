@@ -7,7 +7,7 @@ title: Main
 <div id="splash-container" class="row">
     <div id="splash">
         <div id="secrets">howdeeeeeee</div>
-        <div id="name">Adam Keenan<br/>Site under construction</div>
+        <div id="name">Adam Keenan</div>
         <div id="navbar">
             <ul>
                 <li><a href="#about">About Me</a></li>
@@ -19,11 +19,14 @@ title: Main
 </div>
 
 <div id="about" class="row">
-    <p>{% include about.md %}</p>
+    {% capture about %}{% include about.md %}{% endcapture %}
+    <p>{{ about | markdownify }}</p>
 </div>
 <div id="projects" class="row">
-    <p>{% include projects.md %}</p>
+    {% capture projects %}{% include projects.md %}{% endcapture %}
+    <p>{{ projects | markdownify }}</p>
 </div>
 <div id="contact" class="row">
-    <p>{% include contact.md %}</p>
+    {% capture contact %}{% include contact.md %}{% endcapture %}
+    <p>{{ contact | markdownify }}</p>
 </div>

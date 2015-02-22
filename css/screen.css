@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 5, ../../.rvm/gems/ruby-2.0.0-p481/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,45 +24,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../.rvm/gems/ruby-2.0.0-p481/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../.rvm/gems/ruby-2.0.0-p481/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../.rvm/gems/ruby-2.0.0-p481/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../.rvm/gems/ruby-2.0.0-p481/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../.rvm/gems/ruby-2.0.0-p481/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../.rvm/gems/ruby-2.0.0-p481/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../.rvm/gems/ruby-2.0.0-p481/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../.rvm/gems/ruby-2.0.0-p481/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -180,17 +180,18 @@ div.row {
 div.row p {
   display: inline-block;
   font-size: 3em;
+  margin-bottom: 20px;
 }
-/* line 92, ../sass/main.sass */
+/* line 93, ../sass/main.sass */
 div.row:nth-of-type(odd) {
   background-color: #111;
 }
-/* line 94, ../sass/main.sass */
+/* line 95, ../sass/main.sass */
 div.row:nth-of-type(even) {
   background-color: #55aaff;
 }
 
-/* line 102, ../sass/main.sass */
+/* line 103, ../sass/main.sass */
 #back_to_top {
   cursor: pointer;
   width: 50px;
@@ -210,7 +211,7 @@ div.row:nth-of-type(even) {
   -ms-user-select: none;
   user-select: none;
 }
-/* line 121, ../sass/main.sass */
+/* line 122, ../sass/main.sass */
 #back_to_top:after {
   content: "";
   display: block;
@@ -223,7 +224,7 @@ div.row:nth-of-type(even) {
   border: 4.16667px solid white;
   border-right-width: 5.16667px;
 }
-/* line 132, ../sass/main.sass */
+/* line 133, ../sass/main.sass */
 #back_to_top:before {
   content: "";
   display: block;
@@ -238,13 +239,13 @@ div.row:nth-of-type(even) {
   border-bottom: none;
   transform: rotate(45deg);
 }
-/* line 145, ../sass/main.sass */
+/* line 146, ../sass/main.sass */
 #back_to_top:hover {
   background-color: #55aaff;
   box-shadow: 0 0 10px black;
 }
 
-/* line 153, ../sass/main.sass */
+/* line 154, ../sass/main.sass */
 #secrets {
   display: none;
   padding: 1em 0.5em;
@@ -255,7 +256,7 @@ div.row:nth-of-type(even) {
   transition: background-color 0.25s;
   cursor: pointer;
 }
-/* line 166, ../sass/main.sass */
+/* line 167, ../sass/main.sass */
 #secrets:hover {
   background-color: #55aaff;
 }
