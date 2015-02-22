@@ -100,7 +100,7 @@ $scroll_down_icon_border_size: 5.5px
 $scroll_down_icon_height: $scroll_down_icon_size / 2
 $scroll_down_icon_width: $scroll_down_icon_size / 6
 
-#back_to_top
+#back_to_top2
   cursor: pointer
   width: $scroll_down_icon_size
   height: $scroll_down_icon_size
@@ -148,6 +148,29 @@ $scroll_down_icon_width: $scroll_down_icon_size / 6
     box-shadow: 0 0 10px black
 
 
+#back_to_top
+  text-align: center
+  cursor: pointer
+  width: $scroll_down_icon_size
+  height: $scroll_down_icon_size
+  border: $scroll_down_icon_border_size solid white
+  border-radius: 100%
+  position: fixed
+  right: 25px
+  bottom: 25px
+  box-sizing: border-box
+  z-index: 1
+  transition: all .25s
+
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  &:hover
+    background-color: $border-color
+    box-shadow: 0 0 10px #ccc
 
 
 
@@ -167,3 +190,17 @@ $scroll_down_icon_width: $scroll_down_icon_size / 6
   &:hover
     background-color: $border-color
 
+
+.icon-row
+  font-size: 2em
+  text-align: center
+  margin-top: 50%
+  a.icon
+    display: inline-block
+    text-decoration: none
+    span
+      display: block
+    &:hover
+      cursor: pointer
+    &:not(:last-child)
+      margin-right: 15px

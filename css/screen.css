@@ -192,7 +192,7 @@ div.row:nth-of-type(even) {
 }
 
 /* line 103, ../sass/main.sass */
-#back_to_top {
+#back_to_top2 {
   cursor: pointer;
   width: 50px;
   height: 50px;
@@ -212,7 +212,7 @@ div.row:nth-of-type(even) {
   user-select: none;
 }
 /* line 122, ../sass/main.sass */
-#back_to_top:after {
+#back_to_top2:after {
   content: "";
   display: block;
   box-sizing: border-box;
@@ -225,7 +225,7 @@ div.row:nth-of-type(even) {
   border-right-width: 5.16667px;
 }
 /* line 133, ../sass/main.sass */
-#back_to_top:before {
+#back_to_top2:before {
   content: "";
   display: block;
   width: 25px;
@@ -240,12 +240,39 @@ div.row:nth-of-type(even) {
   transform: rotate(45deg);
 }
 /* line 146, ../sass/main.sass */
-#back_to_top:hover {
+#back_to_top2:hover {
   background-color: #55aaff;
   box-shadow: 0 0 10px black;
 }
 
-/* line 154, ../sass/main.sass */
+/* line 151, ../sass/main.sass */
+#back_to_top {
+  text-align: center;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border: 5.5px solid white;
+  border-radius: 100%;
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  box-sizing: border-box;
+  z-index: 1;
+  transition: all 0.25s;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* line 171, ../sass/main.sass */
+#back_to_top:hover {
+  background-color: #55aaff;
+  box-shadow: 0 0 10px #ccc;
+}
+
+/* line 177, ../sass/main.sass */
 #secrets {
   display: none;
   padding: 1em 0.5em;
@@ -256,7 +283,31 @@ div.row:nth-of-type(even) {
   transition: background-color 0.25s;
   cursor: pointer;
 }
-/* line 167, ../sass/main.sass */
+/* line 190, ../sass/main.sass */
 #secrets:hover {
   background-color: #55aaff;
+}
+
+/* line 194, ../sass/main.sass */
+.icon-row {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 50%;
+}
+/* line 198, ../sass/main.sass */
+.icon-row a.icon {
+  display: inline-block;
+  text-decoration: none;
+}
+/* line 201, ../sass/main.sass */
+.icon-row a.icon span {
+  display: block;
+}
+/* line 203, ../sass/main.sass */
+.icon-row a.icon:hover {
+  cursor: pointer;
+}
+/* line 205, ../sass/main.sass */
+.icon-row a.icon:not(:last-child) {
+  margin-right: 15px;
 }

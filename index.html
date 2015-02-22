@@ -3,7 +3,7 @@ layout: main
 title: Main
 ---
 <span id="scroll_down" style="display: none"></span>
-<span id="back_to_top" style="right: -100px"></span>
+<span id="back_to_top" class="fa fa-arrow-up fa-3x" style="right: -100px"></span>
 <div id="splash-container" class="row">
     <div id="splash">
         <div id="secrets">howdeeeeeee</div>
@@ -12,7 +12,7 @@ title: Main
             <ul>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#info">Info</a></li>
             </ul>
         </div>
     </div>
@@ -20,13 +20,12 @@ title: Main
 
 <div id="about" class="row">
     {% capture about %}{% include about.md %}{% endcapture %}
-    <p>{{ about | markdownify }}</p>
+    {{ about | markdownify }}
 </div>
 <div id="projects" class="row">
     {% capture projects %}{% include projects.md %}{% endcapture %}
-    <p>{{ projects | markdownify }}</p>
+    {{ projects | markdownify }}
 </div>
-<div id="contact" class="row">
-    {% capture contact %}{% include contact.md %}{% endcapture %}
-    <p>{{ contact | markdownify }}</p>
+<div id="info" class="row">
+    {% include info.html %}
 </div>
