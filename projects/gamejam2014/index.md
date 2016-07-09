@@ -9,13 +9,8 @@ $(function() {
     console.log("Hello World!");
 });
 {% endhighlight %}
-{% highlight javascript linenos %}
-$(function() {
-    console.log("Hello World!");
-});
-{% endhighlight %}
 
-{% highlight ruby linenos=table %}
+{% highlight ruby linenos %}
 def show
   @widget = Widget(params[:id])
   respond_to do |format|
@@ -25,12 +20,12 @@ def show
 end
 {% endhighlight %}
 
-{% highlight coffeescript linenos=table %}
+{% highlight coffeescript linenos %}
 $ ->
   $("a").click ->
     return false
 {% endhighlight %}
-{% highlight javascript linenos=table %}
+{% highlight javascript linenos %}
 $(function() {
     $("a").click(function() {
         return false;

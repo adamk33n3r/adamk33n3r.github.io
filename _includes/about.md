@@ -1,5 +1,3 @@
-Hello. My name is Adam Keenan and I am an ambitious student currently studying Computer Science at Taylor University.
+Hello! The name's Adam and I primarily develop web apps.
 
-I am interested in UI and Web Development. I also am very interested in API work.
-
-<a href="#projects">Scroll down</a> to see some of the projects I have worked on.
+Scroll down <a href="#projects">here</a> to see some of the projects I have worked on.

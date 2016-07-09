@@ -1,75 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <!-- for mobile -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    {% include head.html %}
+    <body>
+    <div id="container">
+        {{ content }}
+    </div>
+    <img style="display:none" src="https://ga-beacon.appspot.com/UA-57086843-2/adamk33n3r.github.io{{ page.url }}?pixel" />
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    <!--<script src="js/vendor/pace.min.js"></script>-->
-    <!--<link href="css/vendor/pace.css" rel="stylesheet"/>-->
-
-    <link href='http://fonts.googleapis.com/css?family=Lobster|Shadows+Into+Light|Nunito|Playball|Merienda+One|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-    <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css"/>
-    <link href="/css/pygments/default.css" media="screen, projection" rel="stylesheet" type="text/css"/>
-    <link href="/css/pygments/monokai.css" media="screen, projection" rel="stylesheet" type="text/css"/>
-    <link href="/css/pygments/solarized.css" media="screen, projection" rel="stylesheet" type="text/css"/>
-    <link href="/css/pygments/solarized256.css" media="screen, projection" rel="stylesheet" type="text/css"/>
-    <!--<link href="/css/print.css" media="print" rel="stylesheet" type="text/css"/>-->
-    <!--[if IE]>
-    <link href="/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css"/>
-    <![endif]-->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    {% for css in page.head.css %}
-    <link href="/css/{{ css }}" rel="stylesheet">
-    {% endfor %}
-    <title>adam-keenan.com - {{ page.title }}</title>
-    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="/js/vendor/jquery-ui.min.js"></script>
-    <script src="/js/vendor/jquery.mousewheel.min.js"></script>
-    <script src="/js/vendor/jquery.client.js"></script>
-    <script src="/js/main.js"></script>
-
-    <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">-->
-    <!--<link href="//yui.yahooapis.com/pure/0.5.0/pure-min.css" rel="stylesheet">-->
-
-
-
-
-
-
-    <link rel="shortcut icon" href="/favicons/favicon.ico">
-    <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
-    <meta name="apple-mobile-web-app-title" content="Adam Keenan">
-    <link rel="icon" type="image/png" href="/favicons/favicon-196x196.png" sizes="196x196">
-    <link rel="icon" type="image/png" href="/favicons/favicon-160x160.png" sizes="160x160">
-    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
-    <meta name="msapplication-TileColor" content="#55aaff">
-    <meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
-    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
-    <meta name="application-name" content="Adam Keenan">
-</head>
-<body>
-<div id="container">
-    {{ content }}
-</div>
-<img style="display:none" src="https://ga-beacon.appspot.com/UA-57086843-2/adamk33n3r.github.io{{ page.url }}?pixel" />
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-57086843-1', 'auto');
-    ga('send', 'pageview');
-</script>
-</body>
+        ga('create', 'UA-57086843-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    </body>
 </html>

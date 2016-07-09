@@ -10,15 +10,13 @@ $splash-bg: #111
 html
   height: 100%
 body
+  margin: 0
   color: white
   background: $splash-bg
   height: 100%
   font-size: 1em
   font-family: "Open Sans Condensed", sans-serif
 
-@media (max-width: 1366px)
-  body
-    font-size: .75em
 a
   //text-decoration: none
   color: white
@@ -31,7 +29,6 @@ a
 #container
   height: 100%
   position: relative
-  overflow: hidden
 
 #title
   text-shadow: 0px 1px 1px black
@@ -44,6 +41,7 @@ a
   //margin: auto
   position: relative
   top: 25vh
+  margin-top: -100px
   //width: 50%
   height: 50%
 
@@ -77,6 +75,7 @@ a
         border: 2px solid $border-color
         border-radius: 10px
         padding: .5em 2em
+        background-color: #111
         transition: background-color .25s
         &:hover
           background-color: $border-color
@@ -84,7 +83,7 @@ a
 div.row
   //width: 75%
   min-height: 100%
-  padding: 15px 25%
+  padding: 100px 25%
   box-sizing: border-box
   p
     display: inline-block
@@ -191,11 +190,22 @@ $scroll_down_icon_width: $scroll_down_icon_size / 6
   &:hover
     background-color: $border-color
 
+#info
+  position: relative
+
+#projects
+  ul
+    list-style: initial
+  img
+    width: 300px
 
 .icon-row
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
   font-size: 2em
   text-align: center
-  margin-top: 50%
   a.icon
     display: inline-block
     text-decoration: none
@@ -205,3 +215,8 @@ $scroll_down_icon_width: $scroll_down_icon_size / 6
       cursor: pointer
     &:not(:last-child)
       margin-right: 15px
+
+
+@media (max-width: 1366px)
+  body
+    font-size: .75em
