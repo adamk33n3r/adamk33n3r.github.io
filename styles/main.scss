@@ -1,3 +1,14 @@
 ---
 ---
-@import 'main', 'site'
+@import 'main', 'site';
+
+#projects {
+  text-align: center;
+  p {
+    display: block;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}

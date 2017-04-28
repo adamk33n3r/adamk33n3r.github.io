@@ -22,11 +22,11 @@ GEM
       multipart-post (>= 1.2, < 3)
     ffi (1.9.13)
     gemoji (2.1.0)
-    github-linguist (4.8.7)
+    github-linguist (5.0.8)
       charlock_holmes (~> 0.7.3)
       escape_utils (~> 1.1.0)
       mime-types (>= 1.19)
-      rugged (>= 0.23.0b)
+      rugged (>= 0.25.1)
     github-pages (86)
       github-pages-health-check (= 1.1.0)
       jekyll (= 3.1.6)
@@ -116,7 +116,7 @@ GEM
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
     rouge (1.11.1)
-    rugged (0.25.0b4)
+    rugged (0.25.1.1)
     safe_yaml (1.0.4)
     sass (3.4.22)
     sawyer (0.7.0)
@@ -138,4 +138,4 @@ DEPENDENCIES
   jekyll-coffeescript
 
 BUNDLED WITH
-   1.10.6
+   1.14.6
